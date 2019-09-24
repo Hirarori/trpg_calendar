@@ -43,7 +43,6 @@ end
 group :production do
   gem 'pg',   '0.20.0'
   gem 'fog',  '1.42'
-  gem 'web-console', '3.5.1'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
