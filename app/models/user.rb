@@ -5,14 +5,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[twitter]
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider 
-      user.uid      = auth.uid
-      user.name     = auth.info.name
-      user.save
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        nickname:     auth.info.name,
+        email:    User.dummy_email(auth),
+        password: Devise.friendly_token[0, 20]
+      )
     end
+
+    user
   end
-  validates :username, presence: true
 
   private
  

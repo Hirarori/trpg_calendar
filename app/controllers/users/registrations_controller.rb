@@ -5,14 +5,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  #def new
-  #   super
-  #end
+  def new
+    super
+    @user = User.new
+  end
 
   # POST /resource
-  #def create
-  #   super
-  #end
+  def create
+    super
+    @user.uid = session[:uid]
+    @user.provider = session[:provider]
+    @user.save
+    flash[:notice] = "ユーザ登録が完了しました。"
+  end
 
   # GET /resource/edit
   #def edit

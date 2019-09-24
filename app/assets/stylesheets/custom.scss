@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-social";
+@import "font-awesome";
 
 /* universal */
 
@@ -132,3 +134,20 @@ footer ul li {
   margin-left: 15px;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing(border-box);
+}
+
+input {
+  height: auto !important;
+}
+
+
+.btn-twitter{
+  text-align: center;
+}
