@@ -1,0 +1,19 @@
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.12/ext/mri
+/Users/natori/.rbenv/versions/2.6.4/bin/ruby -I /Users/natori/.rbenv/versions/2.6.4/lib/ruby/2.6.0 -r ./siteconf20190924-20153-14gqg6e.rb extconf.rb
+creating Makefile
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20190924-20153-1ruagt

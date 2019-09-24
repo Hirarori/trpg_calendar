@@ -1,0 +1,15 @@
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+/Users/natori/.rbenv/versions/2.6.4/bin/ruby -I /Users/natori/.rbenv/versions/2.6.4/lib/ruby/2.6.0 -r ./siteconf20190924-4216-19zgm7x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/natori/environment/trpg_calendar2/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20190924-4216-teu2az
