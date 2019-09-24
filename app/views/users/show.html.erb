@@ -1,8 +1,14 @@
-  <ul>
-<%if user_signed_in? %>
-  <li><%=current_user.nickname%></li>
-  <li><%=image_tag "#{current_user.image}"%></li>
-  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-<%else%>
-  <li><%= link_to "ログイン", new_user_session_path %></li>
-<%end%>
+<% provide(:title, current_user.nickname) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%if user_signed_in? %>
+        <h1><%=current_user.nickname%></h1>
+        <li><%=image_tag "#{current_user.image}"%></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <%else%>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+      <%end%>
+    </section>
+  </aside>
+</div>
