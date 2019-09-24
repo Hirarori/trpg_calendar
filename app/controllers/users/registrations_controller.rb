@@ -12,7 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
     @user.uid = session[:uid]
     @user.provider = session[:provider]
     @user.save
