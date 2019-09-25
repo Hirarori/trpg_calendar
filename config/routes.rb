@@ -9,5 +9,4 @@ Rails.application.routes.draw do
                                     registrations: 'users/registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
-  resources :plans,   only: [:create, :edit, :destroy]
 end
