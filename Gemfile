@@ -20,6 +20,8 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
+gem 'momentjs-rails'
+gem 'fullcalendar-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
