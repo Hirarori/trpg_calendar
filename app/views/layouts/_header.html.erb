@@ -1,11 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "TRPG CALENDAR", root_path, id: "logo" %>
+    <% if user_signed_in? %>
+      <%= link_to "TRPG CALENDAR", user_path(current_user), id: "logo" %>
+    <% else %>
+      <%= link_to "TRPG CALENDAR", root_path, id: "logo" %>
+    <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム",  root_path %></li>
-        <li><%= link_to "ヘルプ",  help_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "予定一覧",  events_path %></li>
+          <li><%= link_to "予定作成",  new_event_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "ホーム",  root_path %></li>
+          <li><%= link_to "ヘルプ",  help_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

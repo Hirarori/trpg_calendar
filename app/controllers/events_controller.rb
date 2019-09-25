@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find_by(id: params[:id])
+    @user = @event.user
   end
 
   # GET /events/new
@@ -29,7 +31,8 @@ class EventsController < ApplicationController
       @event.user_id = current_user.id
       respond_to do |format|
         if @event.save
-          format.html { redirect_to @event, notice: 'Event was successfully created.' }
+          flash[:caution] = "予定を作成しました"
+          format.html { redirect_to @event }
           format.json { render :show, status: :created, location: @event }
         else
           format.html { render :new }
@@ -48,7 +51,8 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        flash[:caution] = "予定を編集しました"
+        format.html { redirect_to @event }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -62,7 +66,8 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      flash[:caution] = "予定を削除しました"
+      format.html { redirect_to events_url }
       format.json { head :no_content }
     end
   end
