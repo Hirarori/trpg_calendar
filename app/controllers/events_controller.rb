@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     if user_signed_in?
       @event = Event.find_by(id: params[:id])
     else
-      flash[:caution] = "ログインしてください"
+      flash[:notice] = "ログインしてください"
       redirect_to new_user_session_path
     end
   end
@@ -52,7 +52,7 @@ class EventsController < ApplicationController
       end
 
     else
-      flash[:caution] = "ログインしてください"
+      flash[:notice] = "ログインしてください"
       redirect_to new_user_session_path
     end
   end
@@ -72,7 +72,7 @@ class EventsController < ApplicationController
         end
       end
     else
-      flash[:caution] = "ログインしてください"
+      flash[:notice] = "ログインしてください"
       redirect_to new_user_session_path
     end
   end
@@ -88,7 +88,7 @@ class EventsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      flash[:caution] = "ログインしてください"
+      flash[:notice] = "ログインしてください"
       redirect_to new_user_session_path
     end
   end

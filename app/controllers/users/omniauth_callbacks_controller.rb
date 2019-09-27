@@ -5,6 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
     callback_for(:twitter)
   end
+  # callback for discord
+  def discord
+    callback_for(:discord)
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
